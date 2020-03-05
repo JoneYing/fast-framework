@@ -1,0 +1,43 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /job-admin
+
+### resources
+spring:
+  mvc:
+    static-path-pattern: /static/**
+  resources:
+    static-locations: classpath:/static/
+  freemarker:
+    template-loader-path: classpath:/templates/
+    suffix: .ftl
+    charset: UTF-8
+    request-context-attribute: request
+  datasource:
+    url: jdbc:mysql://120.76.84.210:3306/xxl-job?allowMultiQueries=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=round&amp;autoReconnect=true&amp;useSSL=false
+    username: simmdev
+    password: simm123$%^
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    tomcat:
+      max-active: 30
+      max-wait: 10000
+      test-on-borrow: true
+  mail:
+    host: smtp.qq.com
+    port: 25
+    username: 2568533705@qq.com
+    password: yingjh@
+
+xxl:
+  job:
+    login:
+      username: admin
+      password: 123456
+    accessToken:
+    i18n:
+
+### mybatis
+mybatis:
+  mapper-locations: classpath:/mybatis-mapper/*Mapper.xml

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.joneying</groupId>
+    <artifactId>fast-framework</artifactId>
+    <version>${fast.version}</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>fast-logger</module>
+        <module>fast-redis</module>
+        <module>fast-web</module>
+        <module>fast-security</module>
+        <module>fast-jobcore</module>
+        <module>fast-jobexecutor</module>
+        <module>fast-jobadmin</module>
+    </modules>
+
+    <properties>
+        <resource.delimiter>#</resource.delimiter>
+        <java.version>1.8</java.version>
+        <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+        <quartz.version>2.3.0</quartz.version>
+<!--        <spring.version>5.0.7.RELEASE</spring.version>-->
+        <jetty-server.version>9.2.26.v20180806</jetty-server.version>
+        <fast.version>2.0.2</fast.version>
+    </properties>
+
+    <dependencies>
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <!-- json -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.51</version>
+        </dependency>
+
+    </dependencies>
+
+    <!-- mvn deploy -->
+    <distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>Nexus Release Repository</name>
+            <url>http://nexus.simmtime.com/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://nexus.simmtime.com/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
